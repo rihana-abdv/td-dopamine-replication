@@ -6,7 +6,7 @@ Tasked with replicating Schultz, Dayan, and Montague's TD model and figure from 
 
 Training this on 60 trials of a cue-reward task, where the time-step of the cue and reward were set constant at t=10 and t=18, the model successfully reproduced the three signature cases. In the earliest trials, δ spikes only at the moment of reward. After about 60 trials, the weights converge to 1 for every delay, and the δ spike moves entirely to the cue: the reward itself produces no surprise. Then, once the reward is omitted, the trained model produces a negative dip in δ at the time-step where the reward was expected, while the positive error at the cue time-step is maintained. A trial vs time heatmap of δ (the left graph of the figure) across training showcases this pattern directly. We can visibly see the error propagate backward one weight per trial, moving from the reward towards the cue.
 
-## Where my version differs from the paper
+## How my version differs from the paper
 
 One area of difference between my version and the original paper's is my creative liberty with the exact simulation hyperparameters (learning rate and discount factor), meaning that my replication wasn't an exact quantitative replication. I decided to use α=0.3, 60 trials, and γ=0.98 (highly far-sighted) as reasonable choices.
 
